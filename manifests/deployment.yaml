@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-prediction-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: weather-prediction-deployment
+  template:
+    metadata:
+      labels:
+        app: weather-prediction-deployment
+    spec:
+      containers:
+        - name: weather-prediction
+          image: emreyesilyurt/weather-prediction:latest
+          ports:
+            - containerPort: 8000

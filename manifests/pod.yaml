@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: weather-prediction-pod
+spec:
+   containers:
+   - name: weather-prediction
+     image: emreyesilyurt/weather-prediction:latest
+     ports:
+     - containerPort: 8000
